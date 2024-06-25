@@ -16,7 +16,7 @@ interface UploadPayload {
 })
 export class FileUploadService {
   private uploadUrl = 'http://localhost:8081/upload/upload'; // Endpoint for uploading files
-  private fetchUrl = 'http://localhost:8081/upload/fetch'; // Endpoint for fetching files by email
+  private fetchUrl = 'http://localhost:8081/upload/files'; // Endpoint for fetching files by email
   
   constructor(private http: HttpClient) {}
 

@@ -76,6 +76,7 @@
         (response: any) => {
           if (response && response.filedrive) {
             this.fileUrl = 'data:' + response.filetype + ';base64,' + response.filedrive;
+            console.log("fffff",this.fileUrl)
           } else {
             console.error('No file found for the email:', email);
           }
