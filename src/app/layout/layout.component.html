@@ -22,7 +22,7 @@
           <div *ngIf="uploadForm.get('file')?.errors?.['required'] && uploadForm.get('file')?.touched">
             File is required
           </div>
-        </div>
+        </div>    
   
         <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid">Upload File</button>
       </form>
