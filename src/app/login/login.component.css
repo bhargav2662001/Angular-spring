@@ -6,7 +6,7 @@
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background:url(https://img.playbook.com/GkXdxuPUJybZqdTcLNt124xUnMD_bK19dxy4Z8SczhE/Z3M6Ly9wbGF5Ym9v/ay1hc3NldHMtcHVi/bGljLzJhNWYxODk1/LTE0ZWMtNGNjMi1h/ZGZlLTRkMzQxYWYw/Zjk1OQ) no-repeat center/ cover;
 }
 .main{
 	width: 350px;
@@ -26,7 +26,7 @@
 	height: 100%;
 }
 label{
-	color: #fff;
+	color: #e6b9b9;
 	font-size: 2.3em;
 	justify-content: center;
 	display: flex;

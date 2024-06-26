@@ -9,7 +9,7 @@
             <div class="col-12">
               <div class="grid-container">
                 <div *ngFor="let file of files" class="grid-item" (click)="selectFile(file)">
-                  {{ file.filename }}
+                    <div class="file-name">{{ file.filename }}</div>
                 </div>
               </div>
             </div>
