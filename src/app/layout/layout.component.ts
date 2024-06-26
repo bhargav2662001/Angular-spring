@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploadService } from '../services/file-upload.service';
 import { FormBuilder, FormGroup, FormsModule, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
-// import { EncryptionService } from '../services/encryption.service';
 import { CommonModule } from '@angular/common';
 import { environment } from '../environment';
 import { Router } from '@angular/router';
@@ -29,7 +28,7 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Subscribe to the loginResponse$ to get the latest response
+   
     this.Authservice.loginResponse$.subscribe(response => {
       this.loginResponse = response;
       console.log('Retrieved login response in dashboard:', this.loginResponse);
@@ -103,9 +102,9 @@ export class LayoutComponent implements OnInit {
       }
 
     } else {
-      // Handle the case where the email is empty or too short
+      
       console.error('Error: Invalid email provided.');
-      // Optionally, display an error message to the user
+    
       alert('Error: Please provide a valid email.');
     }
   }
@@ -114,13 +113,13 @@ export class LayoutComponent implements OnInit {
   selectFile(file: FileDetails): void {
     this.selectedFile = file;
     this.fileUrl = 'data:' + file.filetype + ';base64,' + file.filedrive;
-    // console.log("Selected File:", this.selectedFile);
+   
   }
 
   downloadSelectedFile(): void {
     if (this.selectedFile) {
       const downloadUrl = 'data:' + this.selectedFile.filetype + ';base64,' + this.selectedFile.filedrive;
-      window.open(downloadUrl); // Open download in new tab or use other download methods
+      window.open(downloadUrl); 
     } else {
       console.error('No file selected to download.');
     }
@@ -135,6 +134,6 @@ export class LayoutComponent implements OnInit {
 export interface FileDetails {
   filename: string;
   filetype: string;
-  filedrive: string; // Assuming filedrive is a base64-encoded string for the file content
-  // Add other properties as per your API response structure
+  filedrive: string;
+  
 }
