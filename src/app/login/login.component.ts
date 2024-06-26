@@ -4,9 +4,12 @@ import { Router } from '@angular/router';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
+import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-login', 
-  imports: [FormsModule, ReactiveFormsModule],  
+  imports: [FormsModule, ReactiveFormsModule,CommonModule],  
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -16,7 +19,7 @@ export class LoginComponent{
   loginobj:Login;
   signupObj:signup;
   errorMessage: string = '';
-  constructor(private http:HttpClient,private loginService: LoginService,
+  constructor(private http:HttpClient,private loginService: LoginService,private Authservice:AuthService,
     private router: Router ){
     this.loginobj=new Login()
     this.signupObj=new signup()
@@ -29,7 +32,8 @@ onlogin(): void {
   }
 
   const loginCredentials = this.loginForm.value;
-
+console.log("emememem",this.loginForm.value.email)
+this.Authservice.setLoginResponse(this.loginForm.value.email);
   this.loginService.post(loginCredentials).subscribe(
     response => {
       // Log the actual response received from the server
@@ -38,6 +42,7 @@ onlogin(): void {
       // Check the authenticated status
       if (response.authenticated) {
         console.log('Login successful', response);
+        // this.Authservice.setLoginResponse(response);
         this.router.navigate(['/dashboard']);
       } else {
         console.error('Login failed: Invalid credentials');
