@@ -30,24 +30,16 @@
   
     <!-- Section to Fetch and Display File -->
     <div class="fetch-section">
-      <h3>Fetch File</h3>
-      <form (ngSubmit)="fetchFile(fetchEmail)">
-        <div class="form-group">
-          <label for="fetchEmail">Enter Email:</label>
-          <input type="email" id="fetchEmail" [(ngModel)]="fetchEmail" name="fetchEmail" class="form-control" required>
-        </div>
-  
-        <button type="submit" class="btn btn-secondary">Fetch File</button>
-      </form>
-    </div>
-  
-    <!-- Display Section for Uploaded/Fetched File -->
-    <div class="file-display" *ngIf="fileUrl">
-      <h3>File Details</h3>
-      <a [href]="fileUrl" download class="btn btn-success">Download File</a>
-      <p *ngIf="uploadForm.value.filetype?.startsWith('image')">
-        <img [src]="fileUrl" alt="Uploaded Image" class="file-preview">
-      </p>
-    </div>
+        <h3>Fetch File</h3>
+        <form (ngSubmit)="fetchFile(fetchEmail)">
+          <div class="form-group">
+            <label for="fetchEmail">Enter Email:</label>
+            <input type="email" id="fetchEmail" [(ngModel)]="fetchEmail" name="fetchEmail" class="form-control" required>
+          </div>
+    
+          <button type="submit" class="btn btn-secondary">Fetch Files</button>
+        </form>
+      </div>
+   
   </div>
   

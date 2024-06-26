@@ -1,0 +1,94 @@
+<!-- <div class="container" >
+   
+<div class="file-display" *ngIf="files.length > 0">
+    <h3>Fetched Files</h3>
+    <div class="row">
+      <div class="col" *ngFor="let file of files">
+        <button class="btn btn-info mb-2" (click)="selectFile(file)">{{ file.filename }}</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="file-display" *ngIf="selectedFile">
+    <h3>Selected File Details</h3>
+    
+    <div class="selected-file-details">
+      <ng-container *ngIf="selectedFile.filetype?.startsWith('image')">
+        <img [src]="fileUrl" alt="Uploaded Image" class="file-preview">
+      </ng-container>
+  
+      <ng-container *ngIf="!selectedFile.filetype?.startsWith('image')">
+        <p><strong>File type:</strong> {{ selectedFile.filetype }}</p>
+        <p><strong>File name:</strong> {{ selectedFile.filename }}</p>
+        <a *ngIf="fileUrl" [href]="fileUrl" download="{{ selectedFile.filename }}" class="btn btn-success">Download File</a>
+      </ng-container>
+    </div>
+  </div>
+  
+</div> -->
+
+<div class="container ">
+
+    <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Fetched Files</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+              <div class="grid-container">
+                <div *ngFor="let file of files" class="grid-item" (click)="selectFile(file)">
+                  {{ file.filename }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <style>
+       
+      </style>
+            
+      
+      
+      
+  
+   
+    <div class="card mt-4" *ngIf="selectedFile">
+      <div class="card-header">
+        <h3 class="card-title">Selected File Details</h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div *ngIf="selectedFile.filetype?.startsWith('image')" class="text-center">
+              <img [src]="fileUrl" alt="Uploaded Image" class="img-fluid rounded">
+            </div>
+            <div *ngIf="!selectedFile.filetype?.startsWith('image')">
+              <p><strong>File Type:</strong> {{ selectedFile.filetype }}</p>
+              <p><strong>File Name:</strong> {{ selectedFile.filename }}</p>
+              <a *ngIf="fileUrl" [href]="fileUrl" download="{{ selectedFile.filename }}" class="btn btn-success">Download
+                File</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+  .card {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+</style>
+  

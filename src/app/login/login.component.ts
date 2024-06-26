@@ -32,8 +32,10 @@ onlogin(): void {
 
   this.loginService.post(loginCredentials).subscribe(
     response => {
-      console.log('Server response:', response);
+      // Log the actual response received from the server
+      // console.log('Server response:', response);
 
+      // Check the authenticated status
       if (response.authenticated) {
         console.log('Login successful', response);
         this.router.navigate(['/dashboard']);
@@ -48,7 +50,6 @@ onlogin(): void {
     }
   );
 }
-
 
 
 

@@ -1,0 +1,227 @@
+
+.container {
+    height: 81%;
+    margin-top: 3%;
+    width: 87%;
+    padding: 20px;
+    background-color: #71716a;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 7%;
+    overflow: none;
+  }
+  
+
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .form-section,
+  .fetch-section {
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+  }
+  
+  .btn-success {
+    background-color: #28a745;
+    color: #fff;
+    margin-top: 15px;
+  }
+  
+ 
+  .file-display {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .file-preview {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+
+  .form-group div {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+
+  .file-display {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .selected-file-details {
+    margin-top: 15px;
+  }
+  
+  .file-preview {
+    max-width: 100%;
+    max-height: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  .scrollable-list {
+    overflow-y: auto;
+  }
+
+  /* Style for the card to add padding and a subtle shadow */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  /* Header styles for a professional look */
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Scrollable list styles */
+  .scrollable-list {
+    max-height: calc(5 * 48px); /* Limit to the height of 5 items (adjust if your items have different height) */
+    overflow-y: auto;
+    padding-right: 15px; /* For a more balanced appearance with the scrollbar */
+    scrollbar-width: thin; /* For modern browsers */
+  }
+  
+  /* Ensure list items have a clean, professional appearance */
+  .list-group-item {
+    border: none;
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .list-group-item:hover, .list-group-item:focus {
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  /* Scrollbar styling */
+  .scrollable-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollable-list::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 4px;
+  }
+  
+  .scrollable-list::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  /* Scrollbar for Firefox */
+  .scrollable-list {
+    scrollbar-color: #c4c4c4 #f8f9fa;
+    scrollbar-width: thin;
+  }
+   /* Card styles for a professional appearance */
+   .card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  /* Grid container for the list of files */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexible columns */
+    gap: 15px; /* Space between grid items */
+    padding: 10px;
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto; /* Make the grid scrollable if the content exceeds max-height */
+    scrollbar-width: thin;
+  }
+
+  /* Styling for each grid item */
+  .grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .grid-item:hover {
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Scrollbar styling */
+  .grid-container::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .grid-container::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 4px;
+  }
+
+  .grid-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+  /* Scrollbar for Firefox */
+  .grid-container {
+    scrollbar-color: #c4c4c4 #f8f9fa;
+    scrollbar-width: thin;
+  }
