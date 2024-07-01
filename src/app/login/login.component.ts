@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login', 
-  imports: [FormsModule, ReactiveFormsModule,CommonModule],  
+  imports: [FormsModule, ReactiveFormsModule,CommonModule,],  
   standalone: true,
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -17,12 +17,12 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent{
   @ViewChild('loginForm', { static: true }) loginForm!: NgForm;
   loginobj:Login;
-  signupObj:signup;
+  
   errorMessage: string = '';
   constructor(private http:HttpClient,private loginService: LoginService,private Authservice:AuthService,
     private router: Router ){
     this.loginobj=new Login()
-    this.signupObj=new signup()
+   
 }
 
 onlogin(): void {
@@ -36,13 +36,9 @@ console.log("emememem",this.loginForm.value.email)
 this.Authservice.setLoginResponse(this.loginForm.value.email);
   this.loginService.post(loginCredentials).subscribe(
     response => {
-      // Log the actual response received from the server
-      // console.log('Server response:', response);
 
-      // Check the authenticated status
       if (response.authenticated) {
         console.log('Login successful', response);
-        // this.Authservice.setLoginResponse(response);
         this.router.navigate(['/dashboard']);
       } else {
         console.error('Login failed: Invalid credentials');
@@ -59,17 +55,24 @@ this.Authservice.setLoginResponse(this.loginForm.value.email);
 
 
 
-onSignup():void{
-  this.loginService.signpost(this.signupObj).subscribe(
-    response =>{
-      console.log('Signup succesful');
-    },
-    error=>{
-      console.error('Signup faild');
-    }
-  );
+// onSignup():void{
+//   this.loginService.signpost(this.signupObj).subscribe(
+//     response =>{
+//       console.log('Signup succesful');
+//     },
+//     error=>{
+//       console.error('Signup faild');
+//     }
+//   );
 
+// }
+
+
+
+navigateToRegister() {
+  this.router.navigate(['/register']);
 }
+
 }  
 
 export class Login{
@@ -85,20 +88,4 @@ export class Login{
     
 }
 
-export class signup{
-    
-      
-  username: string;
-  email : string;
-  phonenumber : string;
-  password : string;
-
-  constructor(){
-      this.email=''
-      this.password=''
-      this.phonenumber=''
-      this.username=''
-  }
-
-}
 

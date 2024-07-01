@@ -1,3 +1,5 @@
+<div class="background-cover">
+
 <div class="container ">
 
     <div class="card">
@@ -32,12 +34,14 @@
               <p><strong>File Name:</strong> {{ selectedFile.filename }}</p>
               <a *ngIf="fileUrl" [href]="fileUrl" download="{{ selectedFile.filename }}" class="btn btn-success">Download
                 File</a>
+                <button class="btn btn-danger" (click)="closeModal()" style="margin-top: 14px; margin-left: 11px;">Close</button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 

@@ -1,0 +1,13 @@
+/* Step 1: Import Bootstrap CSS at the top */
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+/* Step 2: Your custom styles come after the import */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,4 +1,5 @@
 /* Container Styling */
+@import url('https://fonts.googleapis.com/css?family=Numans');
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -83,4 +84,16 @@
   }
   
 
-  
+
+
+/* Background and font styles */
+.background-cover {
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Numans', sans-serif;
+}

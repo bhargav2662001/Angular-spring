@@ -18,7 +18,7 @@ export class FetchFilesComponent {
   files: any[] = []; 
   email:string=''
 
-  constructor(private uploadService:FileUploadService,private router: ActivatedRoute){
+  constructor(private uploadService:FileUploadService,private router: ActivatedRoute,private route:Router){
  router.queryParams.subscribe((data:any)=>{
       this.email=data.emails
     })
@@ -55,6 +55,10 @@ export class FetchFilesComponent {
     } else {
       console.error('No file selected to download.');
     }
+  }
+
+  closeModal() {
+    this.route.navigate(['/dashboard']);
   }
 }
 export interface FileDetails {

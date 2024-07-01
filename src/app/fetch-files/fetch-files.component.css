@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
 .container {
     height: 81%;
     margin-top: 3%;
@@ -115,7 +117,7 @@
   
   /* Header styles for a professional look */
   .card-header {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa;  
     border-bottom: 1px solid #e9ecef;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -225,3 +227,16 @@
     scrollbar-color: #c4c4c4 #f8f9fa;
     scrollbar-width: thin;
   }
+
+
+/* Background and font styles */
+.background-cover {
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Numans', sans-serif;
+}
