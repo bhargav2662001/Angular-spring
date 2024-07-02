@@ -27,10 +27,17 @@ public class uploadservice {
 	public List<upload> getAllUploadedFiles() {
         return uploadRepository.findAll(); // Assuming findAll() fetches all records from repository
     }
-	public upload getUploadedFileById(Integer fileId) {
-        Optional<upload> file = uploadRepository.findById(fileId);
-        return file.orElse(null); // Return null if file not found, handle as needed
-    }
+//	public upload getUploadedFileByEmail(String email) {
+//	    List<upload> files = uploadRepository.findAllByEmail(email);
+//	    // Handle multiple results here if needed
+//	    return files.isEmpty() ? null : files.get(0); // Example: Return the first result
+//	}
+	
+	public List<upload> getUploadedFilesByEmail(String email) {
+	    List<upload> files = uploadRepository.findAllByEmail(email);
+	    return files; // Returns all files associated with the email
+	}
+
 	
 	public upload updateFile(Integer id, upload updatedFileDetails) throws IOException {
         // Find the existing file by ID

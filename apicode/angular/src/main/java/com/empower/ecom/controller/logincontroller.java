@@ -38,11 +38,24 @@ public class logincontroller {
 	public login getLoginById(@PathVariable Integer id) {
         return cs.readById(id);
     }
+//	@PostMapping
+//	public login addLogin(@RequestBody login login) {
+//        return cs.create(login);
+//    }
 	@PostMapping
-	public login addLogin(@RequestBody login login) {
-        return cs.create(login);
+    public ResponseEntity<?> addLogin(@RequestBody login login) {
+        // Check if the email already exists
+        if (cs.emailExists(login.getemail())) {
+            // Return a response indicating the email is already in use
+            Map<String, Object> response = new HashMap<>();
+            response.put("message", "Email already exists");
+            return ResponseEntity.badRequest().body(response);
+        }
+
+        // Create the new login if email doesn't exist
+        login newLogin = cs.create(login);
+        return ResponseEntity.ok(newLogin);
     }
-	
 //	@PostMapping("/validateLogin")
 //    public String validateLogin(@RequestBody login loginRequest) {
 //        String email = loginRequest.getemail();

@@ -7,25 +7,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-fetch-files',
   standalone: true,
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './fetch-files.component.html',
   styleUrl: './fetch-files.component.css'
 })
 export class FetchFilesComponent {
   fetchEmail: string = '';
-  selectedFile: any = null; 
+  selectedFile: any = null;
   fileUrl: string | null = null;
-  files: any[] = []; 
-  email:string=''
+  files: any[] = [];
+  email: string = ''
 
-  constructor(private uploadService:FileUploadService,private router: ActivatedRoute,private route:Router){
- router.queryParams.subscribe((data:any)=>{
-      this.email=data.emails
+  constructor(private uploadService: FileUploadService, private router: ActivatedRoute, private route: Router) {
+    router.queryParams.subscribe((data: any) => {
+      this.email = data.emails
     })
 
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.uploadService.fetchFile(this.email).subscribe(
       (response: FileDetails[]) => {
         this.files = response; // Store fetched files in component variable
@@ -35,13 +35,13 @@ export class FetchFilesComponent {
         } else {
           console.error('No files found for the email:', this.email);
         }
-      },   
+      },
       error => {
         console.error('Error fetching files:', error);
       }
     );
   }
-  
+
   selectFile(file: FileDetails): void {
     this.selectedFile = file;
     this.fileUrl = 'data:' + file.filetype + ';base64,' + file.filedrive;
@@ -51,7 +51,7 @@ export class FetchFilesComponent {
   downloadSelectedFile(): void {
     if (this.selectedFile) {
       const downloadUrl = 'data:' + this.selectedFile.filetype + ';base64,' + this.selectedFile.filedrive;
-      window.open(downloadUrl); 
+      window.open(downloadUrl);
     } else {
       console.error('No file selected to download.');
     }
@@ -64,5 +64,5 @@ export class FetchFilesComponent {
 export interface FileDetails {
   filename: string;
   filetype: string;
-  filedrive: string; 
+  filedrive: string;
 }

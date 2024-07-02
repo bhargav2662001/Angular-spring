@@ -54,20 +54,18 @@ public class uploadcontroller {
         }
     }
     
-    @GetMapping("/files/{id}")
-    public ResponseEntity<upload> getUploadedFileById(@PathVariable("id") Integer id) {
-        try {
-        	upload file = us.getUploadedFileById(id);
-            if (file != null) {
-                return new ResponseEntity<>(file, HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+    @GetMapping("/email/{email}")
+    public ResponseEntity<List<upload>> getFilesByEmail(@PathVariable String email) {
+        List<upload> files = us.getUploadedFilesByEmail(email);
+        
+        if (files.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(files, HttpStatus.OK);
         }
     }
+
+
     
     
     @PutMapping("/files/{id}")

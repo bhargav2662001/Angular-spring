@@ -7,45 +7,45 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule,CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  signupObj:signup;
-  constructor(private router: Router,private loginService:LoginService) {
-    this.signupObj=new signup()
+  signupObj: signup;
+  constructor(private router: Router, private loginService: LoginService) {
+    this.signupObj = new signup()
   }
-  
-  navigateTologin(){
+
+  navigateTologin() {
     this.router.navigate(['/login']);
   }
-  onSignup():void{
+  onSignup(): void {
     this.loginService.signpost(this.signupObj).subscribe(
-      response =>{
+      response => {
         console.log('Signup succesful');
       },
-      error=>{
+      error => {
         console.error('Signup faild');
       }
     );
-  
+
   }
 
 }
-export class signup{
-    
-      
-  username: string;
-  email : string;
-  phonenumber : string;
-  password : string;
+export class signup {
 
-  constructor(){
-      this.email=''
-      this.password=''
-      this.phonenumber=''
-      this.username=''
+
+  username: string;
+  email: string;
+  phonenumber: string;
+  password: string;
+
+  constructor() {
+    this.email = ''
+    this.password = ''
+    this.phonenumber = ''
+    this.username = ''
   }
 
 }

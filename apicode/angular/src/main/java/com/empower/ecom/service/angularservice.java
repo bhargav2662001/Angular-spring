@@ -16,7 +16,12 @@ public class angularservice {
 
 	 @Autowired
 	    private angularRepository cr;
-
+	 
+	 public boolean emailExists(String email) {
+	        // Translate the numeric result to boolean
+	        return cr.existsByEmail(email) == 1;
+	    }
+	  
 	    public login create(login login) {
 	        return cr.save(login);
 	    }

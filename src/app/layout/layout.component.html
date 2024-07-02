@@ -1,10 +1,9 @@
 
 <div class="background-cover">
 
-<div class="container" style="margin-top: 8%;">
+<div class="container" style="margin-top: 3%;">
     <h2 class="title">File Upload and Fetch System</h2>
   
-    <!-- Form Section for File Upload -->
     <div class="form-section">
       <h3>Upload File</h3>
       <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
@@ -31,7 +30,7 @@
       </form>
     </div>
   
-    <!-- Section to Fetch and Display File -->
+    <!-- Section to Fetch and Display File --> 
     <div class="fetch-section">
         <h3>Fetch File</h3>
         <form (ngSubmit)="fetchFile(fetchEmail)">
