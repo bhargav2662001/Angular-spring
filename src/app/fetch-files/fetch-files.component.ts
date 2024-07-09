@@ -19,7 +19,7 @@ export class FetchFilesComponent {
   email: string = ''
 
   constructor(private uploadService: FileUploadService, private router: ActivatedRoute, private route: Router) {
-    router.queryParams.subscribe((data: any) => {
+    this.router.queryParams.subscribe((data: any) => {
       this.email = data.emails
     })
   }
@@ -58,6 +58,14 @@ export class FetchFilesComponent {
   closeModal() {
     this.route.navigate(['/dashboard']);
   }
+  previewFile() {
+    if (this.selectedFile) {
+      this.route.navigate(['/preview'], { queryParams: { filetype: this.selectedFile.filetype, filedrive: this.selectedFile.filedrive } });
+    } else {
+      console.error('No file selected to preview.');
+    }
+  }
+
 }
 
 export interface FileDetails {

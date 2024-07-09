@@ -4,6 +4,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FetchFilesComponent } from './fetch-files/fetch-files.component';
 import { RegisterComponent } from './register/register.component';
+import { PreviewComponent } from './preview/preview.component';
+
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -15,6 +17,7 @@ export const routes: Routes = [
     },
     {path:'fetch',component:FetchFilesComponent},
     { path: 'register', component: RegisterComponent },
+    { path: 'preview', component: PreviewComponent },
 { path: '**', redirectTo: '/login' }
 ];
   

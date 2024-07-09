@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">File Preview</h3>
+      </div>
+      <div class="card-body text-center">
+        <ng-container *ngIf="filetype && filetype.startsWith('image'); else otherFiles">
+          <img [src]="fileUrl" alt="Preview Image" class="img-fluid rounded">
+        </ng-container>
+        <ng-template #otherFiles>
+          <ng-container *ngIf="filetype === 'application/pdf'; else notSupported">
+            <iframe [src]="fileUrl" width="100%" height="600px"></iframe>
+          </ng-container>
+          <ng-template #notSupported>
+            <ng-container *ngIf="filetype && filetype.startsWith('text'); else genericFile">
+              <embed [src]="fileUrl" width="100%" height="600px">
+            </ng-container>
+            <ng-template #genericFile>
+              <p>Preview not available for this file type.</p>
+              <a [href]="fileUrl" download="{{ filename }}" class="btn btn-success">Download File</a>
+            </ng-template>
+          </ng-template>
+        </ng-template>
+        <button class="btn btn-danger" (click)="closePreview()">Close</button>
+      </div>
+    </div>
+  </div>
+  
