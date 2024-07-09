@@ -1,15 +1,15 @@
 <div class="background-cover">
 
-  <div class="container ">
+  <div class="container" style="margin-bottom: 47px; height: 86%;">
 
-    <div class="card">
+    <div class="card" style="height: 55%;">
       <div class="card-header">
         <h3 class="card-title">Fetched Files</h3>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-12">
-            <div class="grid-container">
+            <div class="grid-container scrollable">
               <div *ngFor="let file of files" class="grid-item" (click)="selectFile(file)">
                 <div class="file-name">{{ file.filename }}</div>
               </div>
@@ -26,35 +26,13 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <div *ngIf="selectedFile.filetype?.startsWith('image')" class="text-center">
-              <img [src]="fileUrl" alt="Uploaded Image" class="img-fluid rounded">
-            </div>
-            <div *ngIf="!selectedFile.filetype?.startsWith('image')">
-              <p><strong>File Type:</strong> {{ selectedFile.filetype }}</p>
-              <p><strong>File Name:</strong> {{ selectedFile.filename }}</p>
-              <a *ngIf="fileUrl" [href]="fileUrl" download="{{ selectedFile.filename }}"
-                class="btn btn-success">Download
-                File</a>
-              <button class="btn btn-danger" (click)="closeModal()"
-                style="margin-top: 14px; margin-left: 11px;">Close</button>
-            </div>
+            <p><strong>File Type:</strong> {{ selectedFile.filetype }}</p>
+            <p><strong>File Name:</strong> {{ selectedFile.filename }}</p>
+            <a *ngIf="fileUrl" [href]="fileUrl" download="{{ selectedFile.filename }}" class="btn btn-success">Download File</a>
+            <button class="btn btn-danger" (click)="closeModal()" style="margin-top: 14px; margin-left: 11px;">Close</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<style>
-  .card {
-    border: none;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
-
-  .card-header {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-  }
-</style>

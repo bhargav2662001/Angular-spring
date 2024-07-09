@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './fetch-files.component.html',
-  styleUrl: './fetch-files.component.css'
+  styleUrls: ['./fetch-files.component.css']
 })
 export class FetchFilesComponent {
   fetchEmail: string = '';
@@ -22,7 +22,6 @@ export class FetchFilesComponent {
     router.queryParams.subscribe((data: any) => {
       this.email = data.emails
     })
-
   }
 
   ngOnInit() {
@@ -45,7 +44,6 @@ export class FetchFilesComponent {
   selectFile(file: FileDetails): void {
     this.selectedFile = file;
     this.fileUrl = 'data:' + file.filetype + ';base64,' + file.filedrive;
-    // console.log("Selected File:", this.selectedFile);
   }
 
   downloadSelectedFile(): void {
@@ -61,6 +59,7 @@ export class FetchFilesComponent {
     this.route.navigate(['/dashboard']);
   }
 }
+
 export interface FileDetails {
   filename: string;
   filetype: string;

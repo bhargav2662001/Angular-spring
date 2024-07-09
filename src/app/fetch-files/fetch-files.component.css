@@ -170,6 +170,11 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
+  .grid-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
 
   .card-header {
     background-color: #f8f9fa;
@@ -226,8 +231,13 @@
   .grid-container {
     scrollbar-color: #c4c4c4 #f8f9fa;
     scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
   }
-
+  .scrollable {
+    max-height: 300px; /* Adjust the height as needed */
+    overflow-y: auto;
+  }
 
 /* Background and font styles */
 .background-cover {
