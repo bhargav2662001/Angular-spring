@@ -24,6 +24,7 @@ export class RegisterComponent {
     this.loginService.signpost(this.signupObj).subscribe(
       response => {
         console.log('Signup succesful');
+        this.signupObj = new signup(); // Clear the form
       },
       error => {
         console.error('Signup faild');

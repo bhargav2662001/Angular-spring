@@ -73,6 +73,10 @@ navigateToRegister() {
   this.router.navigate(['/register']);
 }
 
+navigateToReset(){
+  this.router.navigate(['/reset']);
+}
+
 }  
 
 export class Login{

@@ -1,0 +1,115 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+/* Background and font styles */
+.background-cover {
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Numans', sans-serif;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Card styles */
+.card {
+    height: auto;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+    cursor: pointer;
+}
+
+.social_icon span:hover {
+    color: white;
+}
+
+/* Input group styles */
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.input-group.form-group {
+    margin-bottom: 15px;
+}
+
+/* Timer styles */
+.timer {
+    color: white;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Remember me checkbox styles */
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+/* Login button styles */
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+/* Links styles */
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+/* Additional styles for OTP and Password fields */
+.otp-input,
+.password-input {
+    margin-top: 15px;
+}
