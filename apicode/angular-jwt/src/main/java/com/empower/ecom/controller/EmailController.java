@@ -21,20 +21,7 @@ public class EmailController {
     
     private final Map<String, String> otpStore = new ConcurrentHashMap<>();
     
-//    @PostMapping("/send-email")
-//    public String sendEmail(@RequestBody Map<String, String> request) {
-//        String to = request.get("to");
-//        String subject = "Your OTP Code";
-//        String otp = OtpUtil.generateOtp(); // Generate the OTP
-//        otpStore.put(to, otp); // Store the OTP
-//        try {
-//            emailService.sendEmail(to, subject, "Your OTP code is: " + otp);
-//            return "OTP sent successfully";
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            return "Internal Server Error";
-//        }
-//    }
+
     @PostMapping("/send-email")
     public ResponseEntity<String> sendEmail(@RequestBody Map<String, String> request) {
         String to = request.get("to");
