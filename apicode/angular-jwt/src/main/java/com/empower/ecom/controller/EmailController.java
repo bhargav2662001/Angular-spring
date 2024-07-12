@@ -43,10 +43,6 @@ public class EmailController {
             return ResponseEntity.badRequest().body("Email address is required");
         }
         
-        if (!otpStore.containsKey(to)) {
-            return ResponseEntity.badRequest().body("Email does not exist");
-        }
-        
         String subject = "Your OTP Code";
         String otp = OtpUtil.generateOtp(); // Generate the OTP
         otpStore.put(to, otp); // Store the OTP
