@@ -12,22 +12,43 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.empower.ecom.model.OtpUtil;
 import com.empower.ecom.service.EmailService;
+import com.empower.ecom.service.angularservice;
 
 @RestController
 public class EmailController {
 
     @Autowired
     private EmailService emailService;
+    @Autowired
+    private angularservice angularService;
     
     private final Map<String, String> otpStore = new ConcurrentHashMap<>();
     
-
+//    @PostMapping("/send-email")
+//    public String sendEmail(@RequestBody Map<String, String> request) {
+//        String to = request.get("to");
+//        String subject = "Your OTP Code";
+//        String otp = OtpUtil.generateOtp(); // Generate the OTP
+//        otpStore.put(to, otp); // Store the OTP
+//        try {
+//            emailService.sendEmail(to, subject, "Your OTP code is: " + otp);
+//            return "OTP sent successfully";
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return "Internal Server Error";
+//        }
+//    }
     @PostMapping("/send-email")
     public ResponseEntity<String> sendEmail(@RequestBody Map<String, String> request) {
-        String to = request.get("to");
+String to = request.get("to");
         
         if (to == null || to.isEmpty()) {
             return ResponseEntity.badRequest().body("Email address is required");
+        }
+
+        // Check if the email exists in the database
+        if (!angularService.emailExists(to)) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
         
         String subject = "Your OTP Code";

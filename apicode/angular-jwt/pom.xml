@@ -11,6 +11,7 @@
 	<groupId>com.empower.ecom</groupId>
 	<artifactId>angular-jwt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>angular-jwt</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>

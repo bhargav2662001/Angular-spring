@@ -12,9 +12,10 @@ import com.empower.ecom.model.login;
 @Repository
 public interface angularRepository extends JpaRepository<login, Integer> {
     Optional<login> findByEmailAndPassword(String email, String password);
+    
     @Query(value = "SELECT CASE WHEN COUNT(*) > 0 THEN 1 ELSE 0 END FROM login WHERE email = :email", nativeQuery = true)
     int existsByEmail(@Param("email") String email);
 
-    
-    Optional<login> findByEmail(String email);
+ Optional<login> findByEmail(String email);
+ 
 }
