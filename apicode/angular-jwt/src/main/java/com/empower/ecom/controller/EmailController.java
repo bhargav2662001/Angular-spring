@@ -63,16 +63,16 @@ String to = request.get("to");
         }
     }
     @PostMapping("/verify-otp")
-    public String verifyOtp(@RequestBody Map<String, String> request) {
+    public ResponseEntity<String> verifyOtp(@RequestBody Map<String, String> request) {
         String to = request.get("to");
         String otp = request.get("otp");
         String storedOtp = otpStore.get(to);
 
         if (storedOtp != null && storedOtp.equals(otp)) {
             otpStore.remove(to); // OTP is valid, remove it from the store
-            return "OTP verified successfully";
+            return ResponseEntity.ok("OTP verified successfully");
         } else {
-            return "Invalid OTP";
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid OTP");
         }
-    }
+}
 }
