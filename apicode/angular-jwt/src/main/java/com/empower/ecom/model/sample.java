@@ -21,20 +21,14 @@ public class sample {
 
 
     private Long id;
-//
-//    @NotBlank
-//  @Size(max = 255)
+
     @Column(nullable = false)
     private String username;
 
-//    @NotBlank
-//    @Email
-//    @Size(max = 255)
+
     @Column(unique = true, length = 100, nullable = false)
     private String email;
 
-//    @NotBlank
-//    @Size(max = 255)
     @Column(nullable = false)
     private String password;
 

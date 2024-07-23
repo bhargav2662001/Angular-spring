@@ -28,6 +28,8 @@ public class SecurityConfig {
                         .requestMatchers("/verify-otp").permitAll()
                         .requestMatchers("/login/**").permitAll()
                         .requestMatchers("/upload/**").permitAll()
+//                        .requestMatchers("/swagger-ui/index.html").permitAll()
+                        .requestMatchers("/v3/api-docs/**","/swagger-ui/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
